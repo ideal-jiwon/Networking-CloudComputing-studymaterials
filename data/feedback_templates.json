@@ -1,0 +1,282 @@
+{
+  "correct": {
+    "message_korean": "훌륭합니다! 정확하게 이해하고 계십니다.",
+    "message_english": "Excellent! You have a correct understanding.",
+    "encouragement_korean": "계속 이런 식으로 학습하세요. 개념을 잘 이해하고 있습니다.",
+    "encouragement_english": "Keep learning this way. You understand the concept well.",
+    "feedback_structure": {
+      "include_model_answer": true,
+      "include_related_concepts": true,
+      "include_definitions": true,
+      "include_strengths": true,
+      "include_gaps": false
+    }
+  },
+  "partially_correct": {
+    "message_korean": "좋은 시작입니다! 핵심 개념은 이해하고 있지만, 몇 가지 추가 사항이 있습니다.",
+    "message_english": "Good start! You understand the core concept, but there are some additional points.",
+    "guidance_korean": "다음 개념들을 더 검토해보세요:",
+    "guidance_english": "Please review the following concepts:",
+    "feedback_structure": {
+      "include_model_answer": true,
+      "include_related_concepts": true,
+      "include_definitions": true,
+      "include_strengths": true,
+      "include_gaps": true
+    }
+  },
+  "incorrect": {
+    "message_korean": "다시 한번 생각해보세요. 개념을 다시 복습하는 것이 도움이 될 것입니다.",
+    "message_english": "Please think again. Reviewing the concept will be helpful.",
+    "guidance_korean": "다음 개념들을 복습하는 것이 도움이 될 것입니다:",
+    "guidance_english": "Reviewing the following concepts will be helpful:",
+    "feedback_structure": {
+      "include_model_answer": true,
+      "include_related_concepts": true,
+      "include_definitions": true,
+      "include_strengths": false,
+      "include_gaps": true
+    }
+  },
+  "common_mistakes": {
+    "cloud_computing": {
+      "mistake_korean": "클라우드 컴퓨팅을 단순히 '인터넷 저장소'로만 이해하는 경우",
+      "mistake_english": "Understanding cloud computing as just 'internet storage'",
+      "correction_korean": "클라우드 컴퓨팅은 저장소뿐만 아니라 컴퓨팅, 네트워킹, 데이터베이스 등 다양한 서비스를 포함합니다.",
+      "correction_english": "Cloud computing includes not only storage but also computing, networking, databases, and various other services.",
+      "related_concepts": ["concept-001", "concept-002"]
+    },
+    "scaling": {
+      "mistake_korean": "수평적 확장과 수직적 확장을 혼동하는 경우",
+      "mistake_english": "Confusing horizontal and vertical scaling",
+      "correction_korean": "수직적 확장(Scale Up)은 서버의 성능을 높이는 것이고, 수평적 확장(Scale Out)은 서버의 수를 늘리는 것입니다.",
+      "correction_english": "Vertical scaling (Scale Up) increases server performance, while horizontal scaling (Scale Out) increases the number of servers.",
+      "related_concepts": ["concept-003"]
+    },
+    "tcp_udp": {
+      "mistake_korean": "TCP와 UDP의 사용 사례를 혼동하는 경우",
+      "mistake_english": "Confusing use cases for TCP and UDP",
+      "correction_korean": "TCP는 신뢰성이 중요한 경우(웹, 이메일)에 사용하고, UDP는 속도가 중요한 경우(스트리밍, 게임)에 사용합니다.",
+      "correction_english": "TCP is used when reliability is important (web, email), while UDP is used when speed is critical (streaming, gaming).",
+      "related_concepts": ["concept-019"]
+    },
+    "devops": {
+      "mistake_korean": "DevOps를 단순히 도구나 기술로만 이해하는 경우",
+      "mistake_english": "Understanding DevOps as just tools or technology",
+      "correction_korean": "DevOps는 도구뿐만 아니라 문화, 실천 방법, 협업 방식을 포함하는 포괄적인 접근 방식입니다.",
+      "correction_english": "DevOps is a comprehensive approach that includes culture, practices, and collaboration methods, not just tools.",
+      "related_concepts": ["concept-004", "concept-005"]
+    },
+    "iac": {
+      "mistake_korean": "IaC를 단순히 스크립트 작성으로만 이해하는 경우",
+      "mistake_english": "Understanding IaC as just writing scripts",
+      "correction_korean": "IaC는 인프라를 코드로 관리하여 버전 관리, 재현성, 자동화를 가능하게 하는 방법론입니다.",
+      "correction_english": "IaC is a methodology that enables version control, reproducibility, and automation by managing infrastructure as code.",
+      "related_concepts": ["concept-016", "concept-017"]
+    },
+    "dns_ttl": {
+      "mistake_korean": "DNS TTL을 너무 짧게 또는 너무 길게 설정하는 경우의 영향을 이해하지 못하는 경우",
+      "mistake_english": "Not understanding the impact of setting DNS TTL too short or too long",
+      "correction_korean": "TTL이 짧으면 DNS 조회가 자주 발생하여 부하가 증가하고, TTL이 길면 변경사항 반영이 느려집니다.",
+      "correction_english": "Short TTL increases DNS query load, while long TTL slows down propagation of changes.",
+      "related_concepts": ["concept-020", "concept-021"]
+    },
+    "vm_storage": {
+      "mistake_korean": "Instance Store와 EBS의 차이를 이해하지 못하고 데이터 손실 위험을 간과하는 경우",
+      "mistake_english": "Not understanding the difference between Instance Store and EBS and overlooking data loss risks",
+      "correction_korean": "Instance Store는 인스턴스 중지 시 데이터가 손실되는 임시 스토리지이고, EBS는 영구 스토리지입니다.",
+      "correction_english": "Instance Store is temporary storage that loses data when instance stops, while EBS is persistent storage.",
+      "related_concepts": ["concept-025"]
+    },
+    "cicd": {
+      "mistake_korean": "CI와 CD를 동일한 것으로 이해하는 경우",
+      "mistake_english": "Understanding CI and CD as the same thing",
+      "correction_korean": "CI(지속적 통합)는 코드 변경사항을 자동으로 빌드하고 테스트하는 것이고, CD(지속적 배포)는 테스트를 통과한 코드를 자동으로 배포하는 것입니다.",
+      "correction_english": "CI (Continuous Integration) automatically builds and tests code changes, while CD (Continuous Deployment) automatically deploys tested code.",
+      "related_concepts": ["concept-014", "concept-030"]
+    }
+  },
+  "feedback_templates_by_topic": {
+    "Cloud Computing": {
+      "key_points_korean": [
+        "클라우드 컴퓨팅의 5가지 필수 특성을 이해하세요",
+        "온디맨드 셀프서비스와 탄력성의 차이를 구분하세요",
+        "수평적 확장과 수직적 확장의 장단점을 비교하세요"
+      ],
+      "key_points_english": [
+        "Understand the five essential characteristics of cloud computing",
+        "Distinguish between on-demand self-service and elasticity",
+        "Compare advantages and disadvantages of horizontal and vertical scaling"
+      ],
+      "related_concepts": ["concept-001", "concept-002", "concept-003"]
+    },
+    "DevOps": {
+      "key_points_korean": [
+        "DevOps는 문화, 실천 방법, 도구의 조합입니다",
+        "SDLC의 각 단계와 DevOps의 관계를 이해하세요",
+        "Twelve-Factor App 방법론의 핵심 원칙을 파악하세요"
+      ],
+      "key_points_english": [
+        "DevOps is a combination of culture, practices, and tools",
+        "Understand the relationship between SDLC phases and DevOps",
+        "Grasp the core principles of Twelve-Factor App methodology"
+      ],
+      "related_concepts": ["concept-004", "concept-005", "concept-006"]
+    },
+    "Networking": {
+      "key_points_korean": [
+        "TCP와 UDP의 차이점과 사용 사례를 명확히 구분하세요",
+        "DNS 동작 원리와 TTL의 역할을 이해하세요",
+        "네트워크 계층 구조와 프로토콜의 관계를 파악하세요"
+      ],
+      "key_points_english": [
+        "Clearly distinguish between TCP and UDP and their use cases",
+        "Understand DNS operation principles and the role of TTL",
+        "Grasp the relationship between network layer structure and protocols"
+      ],
+      "related_concepts": ["concept-018", "concept-019", "concept-020", "concept-021"]
+    },
+    "Infrastructure as Code": {
+      "key_points_korean": [
+        "IaC의 핵심 이점: 버전 관리, 재현성, 자동화를 이해하세요",
+        "Terraform의 선언적 구성 방식을 파악하세요",
+        "IaC와 전통적인 인프라 관리 방식의 차이를 비교하세요"
+      ],
+      "key_points_english": [
+        "Understand core benefits of IaC: version control, reproducibility, automation",
+        "Grasp Terraform's declarative configuration approach",
+        "Compare IaC with traditional infrastructure management"
+      ],
+      "related_concepts": ["concept-016", "concept-017"]
+    },
+    "Virtualization": {
+      "key_points_korean": [
+        "가상 머신의 동작 원리와 하이퍼바이저의 역할을 이해하세요",
+        "Instance Store와 EBS의 차이점과 사용 사례를 구분하세요",
+        "머신 이미지의 용도와 생성 방법을 파악하세요"
+      ],
+      "key_points_english": [
+        "Understand VM operation principles and the role of hypervisor",
+        "Distinguish between Instance Store and EBS and their use cases",
+        "Grasp the purpose and creation methods of machine images"
+      ],
+      "related_concepts": ["concept-024", "concept-025", "concept-026", "concept-027"]
+    },
+    "Security": {
+      "key_points_korean": [
+        "IAM의 인증과 권한 부여의 차이를 이해하세요",
+        "네트워크 방화벽의 인바운드/아웃바운드 규칙을 파악하세요",
+        "최소 권한 원칙의 중요성을 이해하세요"
+      ],
+      "key_points_english": [
+        "Understand the difference between authentication and authorization in IAM",
+        "Grasp inbound/outbound rules of network firewalls",
+        "Understand the importance of the principle of least privilege"
+      ],
+      "related_concepts": ["concept-022", "concept-023"]
+    },
+    "CI/CD": {
+      "key_points_korean": [
+        "CI와 CD의 차이점과 각각의 목적을 이해하세요",
+        "자동화된 테스트의 중요성을 파악하세요",
+        "GitHub Actions 워크플로우의 구조를 이해하세요"
+      ],
+      "key_points_english": [
+        "Understand the difference between CI and CD and their purposes",
+        "Grasp the importance of automated testing",
+        "Understand the structure of GitHub Actions workflows"
+      ],
+      "related_concepts": ["concept-014", "concept-015", "concept-030"]
+    },
+    "Version Control": {
+      "key_points_korean": [
+        "Git의 분산 버전 관리 시스템의 특징을 이해하세요",
+        "Forking Workflow의 협업 방식을 파악하세요",
+        "브랜치 전략과 Pull Request의 역할을 이해하세요"
+      ],
+      "key_points_english": [
+        "Understand the characteristics of Git's distributed version control system",
+        "Grasp the collaboration approach of Forking Workflow",
+        "Understand branching strategies and the role of Pull Requests"
+      ],
+      "related_concepts": ["concept-012", "concept-013"]
+    },
+    "Linux": {
+      "key_points_korean": [
+        "리눅스 CLI의 기본 명령어와 사용법을 익히세요",
+        "systemd의 서비스 관리 기능을 이해하세요",
+        "cloud-init의 초기화 프로세스를 파악하세요"
+      ],
+      "key_points_english": [
+        "Learn basic Linux CLI commands and usage",
+        "Understand systemd's service management capabilities",
+        "Grasp cloud-init's initialization process"
+      ],
+      "related_concepts": ["concept-007", "concept-028", "concept-029"]
+    },
+    "Cloud Providers": {
+      "key_points_korean": [
+        "AWS, GCP, Azure의 주요 서비스를 비교하세요",
+        "리전과 가용 영역의 고가용성 전략을 이해하세요",
+        "각 클라우드 제공자의 특징과 강점을 파악하세요"
+      ],
+      "key_points_english": [
+        "Compare major services of AWS, GCP, and Azure",
+        "Understand high availability strategies with regions and availability zones",
+        "Grasp the characteristics and strengths of each cloud provider"
+      ],
+      "related_concepts": ["concept-008", "concept-009", "concept-010", "concept-011"]
+    },
+    "Testing": {
+      "key_points_korean": [
+        "단위 테스트, 통합 테스트, 성능 테스트의 차이를 이해하세요",
+        "각 테스트 유형의 목적과 사용 시기를 파악하세요",
+        "테스트 자동화의 중요성을 이해하세요"
+      ],
+      "key_points_english": [
+        "Understand the differences between unit, integration, and performance testing",
+        "Grasp the purpose and timing of each test type",
+        "Understand the importance of test automation"
+      ],
+      "related_concepts": ["concept-015"]
+    }
+  },
+  "explanation_templates": {
+    "definition_format_korean": "{concept_name}: {definition}",
+    "definition_format_english": "{concept_name}: {definition}",
+    "context_format_korean": "맥락: {context}",
+    "context_format_english": "Context: {context}",
+    "related_concepts_header_korean": "관련 개념:",
+    "related_concepts_header_english": "Related Concepts:",
+    "model_answer_header_korean": "모범 답안:",
+    "model_answer_header_english": "Model Answer:",
+    "your_answer_header_korean": "당신의 답변:",
+    "your_answer_header_english": "Your Answer:",
+    "strengths_header_korean": "잘한 점:",
+    "strengths_header_english": "Strengths:",
+    "gaps_header_korean": "보완할 점:",
+    "gaps_header_english": "Areas for Improvement:",
+    "score_format_korean": "점수: {score}/100",
+    "score_format_english": "Score: {score}/100"
+  },
+  "scoring_thresholds": {
+    "correct": {
+      "min_score": 80,
+      "max_score": 100
+    },
+    "partially_correct": {
+      "min_score": 40,
+      "max_score": 79
+    },
+    "incorrect": {
+      "min_score": 0,
+      "max_score": 39
+    }
+  },
+  "keyword_weights": {
+    "exact_match": 1.0,
+    "partial_match": 0.5,
+    "synonym_match": 0.7,
+    "related_concept_mention": 0.3
+  }
+}

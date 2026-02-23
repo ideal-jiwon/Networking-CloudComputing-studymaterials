@@ -1,0 +1,612 @@
+[
+  {
+    "id": "c-cloud-001",
+    "name": "클라우드 컴퓨팅 (Cloud Computing)",
+    "definition": "인터넷을 통해 서버, 스토리지, 데이터베이스, 네트워킹, 소프트웨어 등의 컴퓨팅 리소스를 온디맨드로 제공하는 서비스 모델",
+    "context": "Cloud computing is the delivery of computing services over the internet, enabling on-demand access to shared resources with minimal management effort.",
+    "source_file": "L01_01_Fundamentals of Cloud Computing_pdf.pdf",
+    "topic_area": "Fundamentals of Cloud Computing",
+    "related_concepts": ["c-cloud-002", "c-cloud-003", "c-cloud-004"],
+    "keywords": ["cloud", "computing", "on-demand", "internet", "서비스모델", "IaaS", "PaaS", "SaaS"]
+  },
+  {
+    "id": "c-cloud-002",
+    "name": "NIST 클라우드 5대 특성 (Five Essential Characteristics)",
+    "definition": "NIST가 정의한 클라우드 컴퓨팅의 필수 특성: On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service",
+    "context": "These five characteristics distinguish true cloud computing from traditional data center hosting. A co-location data center with VMs is NOT cloud if it lacks these characteristics.",
+    "source_file": "L01_01_Fundamentals of Cloud Computing_pdf.pdf",
+    "topic_area": "Fundamentals of Cloud Computing",
+    "related_concepts": ["c-cloud-001", "c-cloud-003"],
+    "keywords": ["NIST", "on-demand self-service", "broad network access", "resource pooling", "rapid elasticity", "measured service"]
+  },
+  {
+    "id": "c-cloud-003",
+    "name": "수평적 확장 vs 수직적 확장 (Horizontal vs Vertical Scaling)",
+    "definition": "수직적 확장(Scale Up)은 단일 서버의 CPU/RAM/스토리지를 증가시키는 것이고, 수평적 확장(Scale Out)은 여러 서버를 추가하여 부하를 분산하는 것",
+    "context": "Horizontal scaling adds more machines to distribute load (better for unpredictable spikes like Black Friday), while vertical scaling increases the power of existing machines (simpler but has hardware limits and single point of failure).",
+    "source_file": "L01_01_Fundamentals of Cloud Computing_pdf.pdf",
+    "topic_area": "Fundamentals of Cloud Computing",
+    "related_concepts": ["c-cloud-001"],
+    "keywords": ["scaling", "horizontal", "vertical", "scale-up", "scale-out", "auto-scaling", "확장"]
+  },
+  {
+    "id": "c-cloud-004",
+    "name": "클라우드 서비스 모델 (IaaS, PaaS, SaaS)",
+    "definition": "IaaS는 인프라(VM, 네트워크, 스토리지) 제공, PaaS는 플랫폼(런타임, 미들웨어) 제공, SaaS는 완전한 소프트웨어 애플리케이션 제공",
+    "context": "IaaS gives you virtual machines and networking (e.g., EC2), PaaS provides a platform to deploy apps without managing infrastructure (e.g., Heroku), SaaS delivers complete applications (e.g., Gmail).",
+    "source_file": "L01_01_Fundamentals of Cloud Computing_pdf.pdf",
+    "topic_area": "Fundamentals of Cloud Computing",
+    "related_concepts": ["c-cloud-001", "c-cloud-002"],
+    "keywords": ["IaaS", "PaaS", "SaaS", "service model", "서비스모델", "infrastructure", "platform"]
+  },
+  {
+    "id": "c-sdlc-001",
+    "name": "SDLC (Software Development Life Cycle)",
+    "definition": "소프트웨어 개발의 전체 생명주기를 관리하는 프로세스: 요구사항 수집 → 설계 → 구현 → 테스트 → 배포 → 유지보수",
+    "context": "SDLC provides a structured approach with defined phases. Phase 1: Requirements gathering, Phase 2: Design (monolithic vs microservices, APIs, security), Phase 3: Implementation (version control, code reviews), Phase 4: Testing (unit, integration, system, acceptance), Phase 5: Deployment, Phase 6: Maintenance.",
+    "source_file": "L02_01_SDLC_pdf.pdf",
+    "topic_area": "The Software Development Life Cycle (SDLC)",
+    "related_concepts": ["c-devops-001", "c-12factor-001"],
+    "keywords": ["SDLC", "lifecycle", "requirements", "design", "implementation", "testing", "deployment", "maintenance"]
+  },
+  {
+    "id": "c-sdlc-002",
+    "name": "클라우드 네이티브 SDLC 고려사항",
+    "definition": "각 SDLC 단계에서 클라우드 네이티브 원칙을 적용: 설계 시 Twelve-Factor 원칙, 구현 시 컨테이너 준비, 테스트 시 컨테이너 오케스트레이션 시나리오 포함",
+    "context": "Cloud-native considerations at each SDLC phase: Design should embrace Twelve-Factor principles (statelessness, config management), Implementation should be container-ready with externalized configuration, Testing must include container orchestration scenarios.",
+    "source_file": "L02_01_SDLC_pdf.pdf",
+    "topic_area": "The Software Development Life Cycle (SDLC)",
+    "related_concepts": ["c-sdlc-001", "c-12factor-001", "c-devops-001"],
+    "keywords": ["cloud-native", "SDLC", "container", "stateless", "configuration"]
+  },
+  {
+    "id": "c-12factor-001",
+    "name": "Twelve-Factor App 방법론",
+    "definition": "Heroku(2011)에서 제안한 클라우드 네이티브 SaaS 애플리케이션 구축을 위한 12가지 모범 사례: 선언적 자동화, OS와의 깨끗한 계약, 클라우드 플랫폼 배포 적합성, 개발/운영 환경 차이 최소화",
+    "context": "Core philosophy: declarative formats for automation, clean contracts with OS, suitability for modern cloud platforms, enabling continuous deployment, minimizing divergence between dev and production.",
+    "source_file": "L02_02_12factor_pdf.pdf",
+    "topic_area": "The Twelve-Factor App",
+    "related_concepts": ["c-12factor-002", "c-devops-001", "c-sdlc-001"],
+    "keywords": ["twelve-factor", "cloud-native", "SaaS", "Heroku", "methodology", "모범사례"]
+  },
+  {
+    "id": "c-12factor-002",
+    "name": "Twelve Factors 상세 (Factor 1-12)",
+    "definition": "1.Codebase(하나의 코드베이스, 여러 배포), 2.Dependencies(명시적 선언/격리), 3.Config(환경변수에 저장), 4.Backing Services(연결된 리소스로 취급), 5.Build/Release/Run(엄격한 단계 분리), 6.Processes(무상태 프로세스), 7.Port Binding(포트 바인딩으로 서비스 노출), 8.Concurrency(프로세스 모델로 확장), 9.Disposability(빠른 시작/우아한 종료), 10.Dev/Prod Parity(개발/운영 환경 일치), 11.Logs(이벤트 스트림으로 취급), 12.Admin Processes(일회성 관리 프로세스)",
+    "context": "Factor 1: One codebase, many deploys. Factor 2: Never rely on system-wide packages, use dependency manifests. Factor 3: Strict separation of config from code via env vars. Factor 4: Databases, queues, caches as attached resources. Factor 5: Strictly separate build/release/run. Factor 6: Stateless processes, no sticky sessions. Factor 7: Export services via port binding. Factor 8: Scale out via process model. Factor 9: Fast startup, graceful shutdown. Factor 10: Keep dev/staging/prod similar. Factor 11: Treat logs as event streams. Factor 12: Run admin tasks as one-off processes.",
+    "source_file": "L02_02_12factor_pdf.pdf",
+    "topic_area": "The Twelve-Factor App",
+    "related_concepts": ["c-12factor-001", "c-devops-001"],
+    "keywords": ["codebase", "dependencies", "config", "backing services", "build", "stateless", "port binding", "concurrency", "disposability", "dev-prod parity", "logs", "admin"]
+  },
+  {
+    "id": "c-devops-001",
+    "name": "DevOps",
+    "definition": "개발(Development)과 운영(Operations)을 통합하여 소프트웨어 개발 주기를 단축하고 지속적으로 고품질 소프트웨어를 제공하는 문화, 실천 방법, 도구의 조합",
+    "context": "DevOps breaks down silos between dev and ops teams. Historical context: before DevOps, developers 'threw code over the wall' to operations, causing slow releases and finger-pointing. DevOps doesn't replace SDLC but accelerates it. Relationship to Twelve-Factor: Factor V aligns with CI/CD, Factor X enables reliable deployments, Factor XI supports observability.",
+    "source_file": "L02_03_DevOps_pdf.pdf",
+    "topic_area": "Introduction to DevOps",
+    "related_concepts": ["c-devops-002", "c-devops-003", "c-sdlc-001", "c-12factor-001"],
+    "keywords": ["DevOps", "development", "operations", "culture", "CI/CD", "collaboration"]
+  },
+  {
+    "id": "c-devops-002",
+    "name": "DevOps의 Three Ways",
+    "definition": "1. Flow/Systems Thinking(전체 시스템 성능에 집중), 2. Feedback Loops(빠른 피드백으로 문제 조기 발견), 3. Continuous Learning(지속적 실험과 학습 문화)",
+    "context": "First Way: Focus on performance of entire system, not individual silos. Second Way: Create fast feedback loops to detect and fix problems early. Third Way: Foster culture of continuous experimentation and learning.",
+    "source_file": "L02_03_DevOps_pdf.pdf",
+    "topic_area": "Introduction to DevOps",
+    "related_concepts": ["c-devops-001", "c-devops-003"],
+    "keywords": ["Three Ways", "flow", "feedback", "continuous learning", "systems thinking"]
+  },
+  {
+    "id": "c-devops-003",
+    "name": "DevOps 핵심 실천 방법 (CALMS)",
+    "definition": "Culture(문화), Automation(자동화), Lean(린), Measurement(측정), Sharing(공유) - DevOps의 5가지 핵심 축",
+    "context": "CALMS framework: Culture of shared responsibility, Automation of repetitive tasks (CI/CD, IaC), Lean principles to eliminate waste, Measurement of key metrics (deployment frequency, lead time, MTTR, change failure rate), Sharing knowledge across teams.",
+    "source_file": "L02_03_DevOps_pdf.pdf",
+    "topic_area": "Introduction to DevOps",
+    "related_concepts": ["c-devops-001", "c-devops-002"],
+    "keywords": ["CALMS", "culture", "automation", "lean", "measurement", "sharing", "DORA metrics"]
+  },
+  {
+    "id": "c-linux-001",
+    "name": "Linux와 Linux 커널",
+    "definition": "Linux는 운영체제 커널을 지칭하며, 커널은 하드웨어와 소프트웨어 간의 조정을 담당. 커널은 하드웨어, 프로세스, 사용자, 권한, 파일 시스템을 관리하며 'ring zero'(커널 공간)에서 실행",
+    "context": "Linux refers to the OS kernel, not the entire OS. The kernel is started by the boot loader (started by BIOS/UEFI). Over 90% of public cloud workloads run on Linux due to: open source (no licensing costs), stability, resource efficiency, strong security model, and flexibility.",
+    "source_file": "L03_01_Introduction to Linux CLI_pdf.pdf",
+    "topic_area": "The Linux Command Line",
+    "related_concepts": ["c-linux-002", "c-linux-003"],
+    "keywords": ["Linux", "kernel", "operating system", "boot loader", "BIOS", "UEFI", "ring zero"]
+  },
+  {
+    "id": "c-linux-002",
+    "name": "Linux 운영체제 구성요소",
+    "definition": "Bootloader(부팅 관리), Kernel(CPU/메모리/주변장치 관리), Daemons(백그라운드 서비스), Desktop Environment(사용자 인터페이스, 클라우드 서버는 headless), Applications, Shell(CLI)",
+    "context": "Components: Bootloader manages boot process, Kernel is core of system, Daemons are background services (web servers, databases), Desktop Environment is user interaction layer (cloud servers are headless - no GUI), Shell is the command-line interface.",
+    "source_file": "L03_01_Introduction to Linux CLI_pdf.pdf",
+    "topic_area": "The Linux Command Line",
+    "related_concepts": ["c-linux-001", "c-linux-003"],
+    "keywords": ["bootloader", "kernel", "daemon", "shell", "headless", "GUI"]
+  },
+  {
+    "id": "c-linux-003",
+    "name": "Linux Shell과 CLI 기본 명령어",
+    "definition": "Shell은 사용자와 커널 사이의 인터페이스로, 명령어를 해석하고 실행. 기본 명령어: ls, cd, pwd, mkdir, rm, cp, mv, cat, grep, chmod, chown, ps, top, kill 등",
+    "context": "Shell acts as interface between user and kernel. Login program validates credentials then starts shell. Shell is a Command Line Interpreter (CLI) that interprets commands and arranges for execution. Key commands for file management, process management, permissions, and system administration.",
+    "source_file": "L03_01_Introduction to Linux CLI_pdf.pdf",
+    "topic_area": "The Linux Command Line",
+    "related_concepts": ["c-linux-001", "c-linux-002", "c-linux-004"],
+    "keywords": ["shell", "CLI", "bash", "ls", "cd", "grep", "chmod", "permissions", "명령어"]
+  },
+  {
+    "id": "c-linux-004",
+    "name": "Linux 파일 시스템과 권한",
+    "definition": "Linux 파일 시스템은 계층적 트리 구조(/ 루트에서 시작). 파일 권한은 owner/group/others에 대해 read(r)/write(w)/execute(x) 설정. chmod로 권한 변경, chown으로 소유자 변경",
+    "context": "Hierarchical file system starting from root (/). Key directories: /home (user files), /etc (configuration), /var (variable data), /tmp (temporary). Permission model: rwx for owner, group, others. Numeric notation: 755 = rwxr-xr-x.",
+    "source_file": "L03_01_Introduction to Linux CLI_pdf.pdf",
+    "topic_area": "The Linux Command Line",
+    "related_concepts": ["c-linux-003"],
+    "keywords": ["file system", "permissions", "chmod", "chown", "rwx", "root", "directory"]
+  },
+  {
+    "id": "c-regions-001",
+    "name": "클라우드 리전 (Cloud Regions)",
+    "definition": "리전은 특정 지리적 위치에 있는 존(zone)들의 모음. 리전에 배포된 리소스는 자동으로 다른 리전에 복제되지 않음. 데이터 주권(GDPR 등)을 위해 특정 리전에 데이터를 유지해야 할 수 있음",
+    "context": "A region is a specific geographical location where you can host resources. Regions are collections of zones. Examples: US East (N. Virginia), EU West (Ireland), Asia Pacific (Tokyo). Resources in one region don't automatically replicate to another. Data sovereignty: some data must legally stay within certain geographic boundaries (e.g., GDPR).",
+    "source_file": "L03_02_Regions, Availability Zones_pdf.pdf",
+    "topic_area": "Cloud Regions & Availability Zones",
+    "related_concepts": ["c-regions-002", "c-regions-003"],
+    "keywords": ["region", "geographic", "data sovereignty", "GDPR", "리전"]
+  },
+  {
+    "id": "c-regions-002",
+    "name": "가용 영역 (Availability Zones)",
+    "definition": "가용 영역은 리전 내의 배포 영역으로, 논리적 격리 경계. 존 ≠ 데이터센터. 하나의 데이터센터에 여러 존이 있을 수 있음. 존은 '장애 도메인'으로, 하나가 실패해도 다른 존은 계속 운영",
+    "context": "A zone is a deployment area within a region. Important: zones ≠ data centers. A zone is a logical isolation boundary, not necessarily a physical building. Think of zones as 'failure domains' - if one fails, others should continue operating. Zones within a region are connected by low-latency networks.",
+    "source_file": "L03_02_Regions, Availability Zones_pdf.pdf",
+    "topic_area": "Cloud Regions & Availability Zones",
+    "related_concepts": ["c-regions-001", "c-regions-003"],
+    "keywords": ["availability zone", "failure domain", "isolation", "가용영역", "data center"]
+  },
+  {
+    "id": "c-regions-003",
+    "name": "리전/존 선택 전략과 고가용성",
+    "definition": "리전 선택 시 고려사항: 규정 준수(데이터 거주), 성능 최적화(지연 시간 감소), 재해 복구, 비용 관리. 고가용성을 위해 여러 가용 영역에 걸쳐 배포",
+    "context": "Understanding regions and availability zones is essential for: compliance requirements (data residency laws), performance optimization (latency reduction), disaster recovery planning, cost management. Deploy across multiple AZs for high availability.",
+    "source_file": "L03_02_Regions, Availability Zones_pdf.pdf",
+    "topic_area": "Cloud Regions & Availability Zones",
+    "related_concepts": ["c-regions-001", "c-regions-002"],
+    "keywords": ["high availability", "disaster recovery", "latency", "compliance", "multi-AZ", "고가용성"]
+  },
+  {
+    "id": "c-testing-001",
+    "name": "소프트웨어 테스팅 기초와 테스팅 피라미드",
+    "definition": "테스팅 피라미드: 하단(가장 넓음)=Unit Tests(많고, 빠르고, 격리), 중간=Integration Tests(적당한 수, 컴포넌트 상호작용), 상단(가장 좁음)=End-to-End Tests(적고, 느리고, 전체 워크플로우). 피라미드는 빠른 피드백을 위해 최적화",
+    "context": "Testing pyramid optimizes for fast feedback. In CI/CD pipelines, you want tests that fail fast. Unit tests: verify single unit in isolation, execute in milliseconds, no external dependencies, use mocks/stubs. Integration tests: verify interactions between components, test database queries, API calls. E2E tests: test complete workflows.",
+    "source_file": "L04_01_Testing_pdf.pdf",
+    "topic_area": "Unit, Integration, Performance, and Load Testing",
+    "related_concepts": ["c-testing-002", "c-testing-003"],
+    "keywords": ["testing pyramid", "unit test", "integration test", "end-to-end", "테스트", "피라미드"]
+  },
+  {
+    "id": "c-testing-002",
+    "name": "단위 테스트 (Unit Tests)",
+    "definition": "단일 코드 단위(함수, 메서드, 클래스)를 격리하여 검증하는 테스트. 밀리초 단위로 실행, 외부 의존성 없음, 테스트 더블(mock, stub, fake) 사용, 결정적(같은 입력 → 같은 출력)",
+    "context": "Unit tests verify a single unit of code in isolation. Characteristics: execute in milliseconds, no external dependencies (database, network, file system), use test doubles to isolate unit under test, should be deterministic.",
+    "source_file": "L04_01_Testing_pdf.pdf",
+    "topic_area": "Unit, Integration, Performance, and Load Testing",
+    "related_concepts": ["c-testing-001", "c-testing-003"],
+    "keywords": ["unit test", "isolation", "mock", "stub", "deterministic", "단위테스트"]
+  },
+  {
+    "id": "c-testing-003",
+    "name": "통합 테스트와 E2E 테스트",
+    "definition": "통합 테스트: 여러 컴포넌트/시스템 간의 상호작용 검증(DB 쿼리, API 호출, 메시지 큐). E2E 테스트: 전체 워크플로우를 처음부터 끝까지 테스트",
+    "context": "Integration tests verify interactions between multiple components: database queries and transactions, API calls between services, message queue producers and consumers. E2E tests verify complete user workflows from start to finish.",
+    "source_file": "L04_01_Testing_pdf.pdf",
+    "topic_area": "Unit, Integration, Performance, and Load Testing",
+    "related_concepts": ["c-testing-001", "c-testing-002"],
+    "keywords": ["integration test", "end-to-end", "database", "API", "통합테스트"]
+  },
+  {
+    "id": "c-ci-001",
+    "name": "지속적 통합 (Continuous Integration)",
+    "definition": "개발자가 코드 변경사항을 공유 저장소에 자주(하루에 여러 번) 통합하고, 각 통합을 자동 빌드와 자동 테스트로 검증하는 소프트웨어 개발 실천 방법",
+    "context": "CI is a practice where developers frequently integrate code into a shared repository, verified by automated build and tests. Three pillars: 1) Frequent Commits (at least daily), 2) Automated Build (every commit triggers build), 3) Automated Testing (tests run on every integration).",
+    "source_file": "L04_02_CI_pdf.pdf",
+    "topic_area": "Continuous Integration with GitHub Actions",
+    "related_concepts": ["c-ci-002", "c-ci-003", "c-devops-001"],
+    "keywords": ["CI", "continuous integration", "automated build", "automated testing", "지속적통합"]
+  },
+  {
+    "id": "c-ci-002",
+    "name": "CI 핵심 실천 방법",
+    "definition": "1. 단일 소스 저장소 유지, 2. 빌드 자동화(한 명령으로 전체 빌드), 3. 빌드 자체 테스트(자동 테스트 포함), 4. 모든 커밋이 메인라인에서 빌드, 5. 빌드 실패 즉시 수정, 6. 빌드 빠르게 유지",
+    "context": "Core CI practices: Maintain single source repository (all code in Git), Automate the build (one command builds entire system), Make build self-testing (automated tests as part of build), Every commit builds on mainline, Fix broken builds immediately, Keep the build fast.",
+    "source_file": "L04_02_CI_pdf.pdf",
+    "topic_area": "Continuous Integration with GitHub Actions",
+    "related_concepts": ["c-ci-001", "c-ci-003"],
+    "keywords": ["single repository", "automated build", "self-testing", "mainline", "빌드"]
+  },
+  {
+    "id": "c-ci-003",
+    "name": "CI 파이프라인과 도구",
+    "definition": "CI 파이프라인 워크플로우: 코드 커밋 → 자동 빌드 트리거 → 코드 컴파일 → 테스트 실행 → 아티팩트 생성 → 결과 보고. 주요 도구: Jenkins, GitHub Actions, GitLab CI, CircleCI",
+    "context": "CI pipeline workflow: code commit → trigger build → compile → run tests → produce artifacts → report results. Connection to Twelve-Factor: Factor V (Build/Release/Run) aligns directly with CI pipelines.",
+    "source_file": "L04_02_CI_pdf.pdf",
+    "topic_area": "Continuous Integration with GitHub Actions",
+    "related_concepts": ["c-ci-001", "c-ci-002", "c-ghactions-001"],
+    "keywords": ["pipeline", "Jenkins", "GitHub Actions", "GitLab CI", "artifacts", "파이프라인"]
+  },
+  {
+    "id": "c-git-001",
+    "name": "버전 관리와 Git",
+    "definition": "버전 관리는 파일의 변경사항을 시간에 따라 기록하여 특정 버전을 나중에 불러올 수 있는 시스템. Git은 분산 버전 관리 시스템(DVCS)으로, 모든 개발자가 전체 저장소의 복사본을 가짐",
+    "context": "Version control records changes to files over time. Core concepts: Repository (database of all files and history), Commit (snapshot at specific point), Branch (parallel version), Merge (combining changes). Types: Local VCS, Centralized (SVN), Distributed (Git). Git advantages: every clone is a full backup, works offline, fast operations.",
+    "source_file": "L04_03_Version Control with Git_pdf.pdf",
+    "topic_area": "Version Control with Git",
+    "related_concepts": ["c-git-002", "c-git-003"],
+    "keywords": ["Git", "version control", "DVCS", "repository", "commit", "branch", "merge", "버전관리"]
+  },
+  {
+    "id": "c-git-002",
+    "name": "Git 핵심 개념 (Repository, Commit, Branch, Merge)",
+    "definition": "Repository: 모든 파일과 히스토리를 저장하는 데이터베이스. Commit: 특정 시점의 프로젝트 스냅샷(고유 ID, 메시지, 메타데이터). Branch: 저장소의 병렬 버전. Merge: 다른 브랜치의 변경사항을 합치는 것",
+    "context": "Repository is the project folder with superpowers. Commit has unique identifier, message, and metadata (who, when). Branch is like making a copy for experimentation. Merge combines changes from different branches. Git's three areas: Working Directory, Staging Area, Repository.",
+    "source_file": "L04_03_Version Control with Git_pdf.pdf",
+    "topic_area": "Version Control with Git",
+    "related_concepts": ["c-git-001", "c-git-003"],
+    "keywords": ["repository", "commit", "branch", "merge", "staging area", "working directory"]
+  },
+  {
+    "id": "c-git-003",
+    "name": "Git Forking Workflow",
+    "definition": "오픈소스 프로젝트에서 주로 사용되는 협업 방식: 원본 저장소를 포크 → 로컬에 클론 → 기능 브랜치 생성 → 변경 작업 → 포크에 푸시 → Pull Request 생성 → 리뷰 → 머지",
+    "context": "Forking workflow: Fork original repo → Clone fork locally → Add upstream remote → Create feature branch → Make changes and commit → Push to fork → Open Pull Request → Review and iterate → Merge. This isolates contributions and allows maintainers to review before merging.",
+    "source_file": "L04_03_Version Control with Git_pdf.pdf",
+    "topic_area": "Git Forking Workflow",
+    "related_concepts": ["c-git-001", "c-git-002"],
+    "keywords": ["fork", "pull request", "upstream", "clone", "collaboration", "open source", "포크"]
+  },
+  {
+    "id": "c-ghactions-001",
+    "name": "GitHub Actions",
+    "definition": "GitHub에서 제공하는 CI/CD 자동화 플랫폼. 이벤트 기반으로 워크플로우를 실행하여 빌드, 테스트, 배포를 자동화. 구성요소: Workflows, Events, Jobs, Steps, Actions, Runners",
+    "context": "GitHub Actions automates software workflows. Event-driven: run commands after specified events. Components: Workflow (automated procedure, YAML file), Events (triggers like push, PR), Jobs (set of steps on same runner), Steps (individual tasks), Actions (reusable units), Runners (servers that execute jobs).",
+    "source_file": "L04_04_GitHub_Actions_pdf.pdf",
+    "topic_area": "Continuous Integration with GitHub Actions",
+    "related_concepts": ["c-ghactions-002", "c-ghactions-003", "c-ci-001"],
+    "keywords": ["GitHub Actions", "workflow", "event", "job", "runner", "action", "YAML"]
+  },
+  {
+    "id": "c-ghactions-002",
+    "name": "GitHub Actions 워크플로우 구성",
+    "definition": "워크플로우는 .github/workflows/ 디렉토리의 YAML 파일로 정의. 이벤트(push, pull_request, schedule 등)에 의해 트리거. Jobs는 Runner에서 실행되며, Steps는 순차적으로 실행",
+    "context": "Workflow YAML structure: name, on (trigger events), jobs (with runs-on, steps). Events: push, pull_request, schedule, workflow_dispatch, repository_dispatch. Jobs run on runners (GitHub-hosted or self-hosted). Steps execute sequentially within a job.",
+    "source_file": "L04_04_GitHub_Actions_pdf.pdf",
+    "topic_area": "Continuous Integration with GitHub Actions",
+    "related_concepts": ["c-ghactions-001", "c-ghactions-003"],
+    "keywords": ["YAML", "workflow", "trigger", "push", "pull_request", "runs-on", "steps"]
+  },
+  {
+    "id": "c-ghactions-003",
+    "name": "GitHub Actions Runners와 Secrets",
+    "definition": "Runner는 워크플로우를 실행하는 서버. GitHub-hosted runners(Ubuntu, Windows, macOS) 또는 self-hosted runners 사용 가능. Secrets는 암호화된 환경변수로 API 키, 비밀번호 등을 안전하게 저장",
+    "context": "Runners execute workflow jobs. GitHub-hosted: Ubuntu Linux, Windows, macOS (pre-installed tools). Self-hosted: your own servers for custom environments. Secrets: encrypted environment variables for sensitive data (API keys, passwords). Access via secrets context in workflows.",
+    "source_file": "L04_04_GitHub_Actions_pdf.pdf",
+    "topic_area": "Continuous Integration with GitHub Actions",
+    "related_concepts": ["c-ghactions-001", "c-ghactions-002"],
+    "keywords": ["runner", "GitHub-hosted", "self-hosted", "secrets", "environment variables"]
+  },
+  {
+    "id": "c-network-001",
+    "name": "네트워킹 기초 (LAN, WAN, 프로토콜)",
+    "definition": "네트워크는 통신 링크로 연결된 시스템들의 모음. LAN(근거리 통신망)은 지역적, WAN(광역 통신망)은 넓은 지역. 시스템은 스위치나 라우터를 통해 간접 연결. 대역폭은 최대 데이터 전송률(bits/second)",
+    "context": "A network is systems connected via communication links. LAN is local, WAN spans larger areas (multiple LANs). Systems connect indirectly via switches/routers. Bandwidth is maximum data transfer rate in bits/second (not bytes). Communication links: coaxial, copper, fiber, radio waves.",
+    "source_file": "L05_01_Fundamentals of Computer Networking_pdf.pdf",
+    "topic_area": "Networking Fundamentals",
+    "related_concepts": ["c-network-002", "c-network-003", "c-network-004"],
+    "keywords": ["LAN", "WAN", "bandwidth", "protocol", "switch", "router", "네트워크"]
+  },
+  {
+    "id": "c-network-002",
+    "name": "네트워크 프로토콜 스택과 OSI 모델",
+    "definition": "네트워크 프로토콜은 통신 엔티티 간 메시지 형식과 순서를 정의. OSI 7계층: Physical, Data Link, Network, Transport, Session, Presentation, Application. TCP/IP 모델: Network Interface, Internet, Transport, Application",
+    "context": "Protocols define format and order of messages exchanged between communicating entities. OSI Reference Model has 7 layers. TCP/IP model has 4 layers. Each layer provides services to the layer above and uses services from the layer below.",
+    "source_file": "L05_01_Fundamentals of Computer Networking_pdf.pdf",
+    "topic_area": "Networking Fundamentals",
+    "related_concepts": ["c-network-001", "c-network-003"],
+    "keywords": ["OSI", "TCP/IP", "protocol stack", "layer", "계층", "프로토콜"]
+  },
+  {
+    "id": "c-network-003",
+    "name": "TCP vs UDP",
+    "definition": "TCP: 연결 지향적, 신뢰성 있는 순서 보장 전송, 오류 검사와 재전송, 3-way handshake. UDP: 비연결형, 빠르지만 전송 보장 없음, 순서 보장 없음, 오버헤드 적음",
+    "context": "TCP (Transmission Control Protocol): connection-oriented, reliable ordered delivery, error checking, retransmission of lost packets, 3-way handshake (SYN, SYN-ACK, ACK). Use for: banking, web, email. UDP (User Datagram Protocol): connectionless, faster, no delivery/ordering guarantees, lower overhead. Use for: streaming, gaming, live sports.",
+    "source_file": "L05_01_Fundamentals of Computer Networking_pdf.pdf",
+    "topic_area": "Networking Fundamentals",
+    "related_concepts": ["c-network-001", "c-network-002"],
+    "keywords": ["TCP", "UDP", "reliable", "connectionless", "3-way handshake", "프로토콜"]
+  },
+  {
+    "id": "c-network-004",
+    "name": "DNS와 DNS TTL",
+    "definition": "DNS(Domain Name System)는 도메인 이름을 IP 주소로 변환하는 시스템. TTL(Time To Live)은 DNS 레코드가 캐시에 저장되는 시간(초). TTL 만료 시 새로운 DNS 조회 수행",
+    "context": "DNS translates domain names to IP addresses. TTL determines how long DNS records are cached. Migration strategy: lower TTL days before migration (e.g., 300 seconds), wait for old TTL to expire, perform migration, then increase TTL back. Short TTL = more DNS queries but faster propagation. Long TTL = fewer queries but slower propagation.",
+    "source_file": "L05_01_Fundamentals of Computer Networking_pdf.pdf",
+    "topic_area": "Networking Fundamentals",
+    "related_concepts": ["c-network-001"],
+    "keywords": ["DNS", "TTL", "domain", "IP address", "cache", "propagation", "도메인"]
+  },
+  {
+    "id": "c-network-005",
+    "name": "IP 주소, 서브넷, CIDR",
+    "definition": "IP 주소는 네트워크에서 장치를 식별하는 고유 주소. IPv4(32비트, 예: 192.168.1.1), IPv6(128비트). 서브넷은 네트워크를 더 작은 네트워크로 분할. CIDR 표기법(예: 10.0.0.0/16)으로 서브넷 범위 표현",
+    "context": "IP addresses identify devices on a network. IPv4: 32-bit (4 octets), IPv6: 128-bit. Subnetting divides networks into smaller segments. CIDR notation: 10.0.0.0/16 means first 16 bits are network portion. Subnet mask determines network vs host portion.",
+    "source_file": "L05_01_Fundamentals of Computer Networking_pdf.pdf",
+    "topic_area": "Networking Fundamentals",
+    "related_concepts": ["c-network-001", "c-network-006"],
+    "keywords": ["IP address", "IPv4", "IPv6", "subnet", "CIDR", "서브넷"]
+  },
+  {
+    "id": "c-network-006",
+    "name": "VPC, 라우팅, NAT",
+    "definition": "VPC(Virtual Private Cloud)는 클라우드 내의 격리된 가상 네트워크. 라우팅은 패킷이 목적지까지 가는 경로를 결정. NAT(Network Address Translation)는 사설 IP를 공인 IP로 변환하여 인터넷 접근 가능하게 함",
+    "context": "VPC is an isolated virtual network in the cloud. Routing determines how packets travel to their destination using routing tables. NAT translates private IPs to public IPs for internet access. Internet Gateway connects VPC to internet. Route tables define traffic flow rules.",
+    "source_file": "L05_01_Fundamentals of Computer Networking_pdf.pdf",
+    "topic_area": "Networking Fundamentals",
+    "related_concepts": ["c-network-005", "c-network-001"],
+    "keywords": ["VPC", "routing", "NAT", "internet gateway", "route table", "가상네트워크"]
+  },
+  {
+    "id": "c-iac-001",
+    "name": "Infrastructure as Code (IaC)",
+    "definition": "인프라 자동화를 소프트웨어 개발 실천 방법에 기반하여 수행하는 방식. 일관되고 반복 가능한 루틴으로 시스템을 프로비저닝하고 변경. 인프라를 소프트웨어와 데이터로 취급",
+    "context": "IaC is infrastructure automation based on software development practices. Goals: infrastructure supports change, routine changes without drama, self-service provisioning, easy recovery from failures, continuous improvement. Connects to VCS, automated testing, TDD, CI/CD.",
+    "source_file": "L05_02_Infrastructure as Code (IaC)_pdf.pdf",
+    "topic_area": "Infrastructure as Code w/Terraform",
+    "related_concepts": ["c-iac-002", "c-iac-003", "c-terraform-001"],
+    "keywords": ["IaC", "infrastructure", "automation", "provisioning", "reproducibility", "인프라"]
+  },
+  {
+    "id": "c-iac-002",
+    "name": "IaC 핵심 원칙과 문제점",
+    "definition": "핵심 원칙: 재현성(reproducibility), 폐기 가능성(disposability), 일관성(consistency), 반복 가능성(repeatability), 지속적 변경. 문제점: 서버 스프롤, 구성 드리프트, 스노우플레이크 서버",
+    "context": "Core principles: reproducibility, disposability, consistency, repeatability, continuous change. Challenges: server sprawl (rapid provisioning leads to unmanageable growth), configuration drift (consistently created servers diverge over time), snowflake servers (unique servers that can't be reproduced). Pets vs Cattle mindset: treat servers as replaceable cattle, not unique pets.",
+    "source_file": "L05_02_Infrastructure as Code (IaC)_pdf.pdf",
+    "topic_area": "Infrastructure as Code w/Terraform",
+    "related_concepts": ["c-iac-001", "c-iac-003"],
+    "keywords": ["reproducibility", "configuration drift", "snowflake server", "pets vs cattle", "disposability"]
+  },
+  {
+    "id": "c-iac-003",
+    "name": "IaC 도구 분류: 선언적 vs 명령적",
+    "definition": "선언적(Declarative): 원하는 최종 상태를 정의하면 도구가 달성 방법을 결정(Terraform, CloudFormation). 명령적(Imperative): 단계별 명령을 지정(Ansible, Chef scripts). 선언적 방식이 IaC에서 선호됨",
+    "context": "Declarative: define desired end state, tool figures out how to achieve it (Terraform, CloudFormation). Imperative: specify step-by-step commands (Ansible playbooks, shell scripts). Declarative is preferred for IaC because it's idempotent and easier to reason about.",
+    "source_file": "L05_02_Infrastructure as Code (IaC)_pdf.pdf",
+    "topic_area": "Infrastructure as Code w/Terraform",
+    "related_concepts": ["c-iac-001", "c-terraform-001"],
+    "keywords": ["declarative", "imperative", "idempotent", "CloudFormation", "Ansible"]
+  },
+  {
+    "id": "c-terraform-001",
+    "name": "Terraform 기초",
+    "definition": "HashiCorp에서 개발한 오픈소스 IaC 도구. HCL(HashiCorp Configuration Language)로 .tf 파일 작성. 선언적 구성으로 클라우드 인프라를 프로비저닝하고 관리. 여러 클라우드 프로바이더 지원",
+    "context": "Terraform uses HCL in .tf files. Setup: set AWS credentials as environment variables (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY) or use ~/.aws/credentials. Provider configuration specifies which cloud to use. terraform init downloads provider code to .terraform folder.",
+    "source_file": "L05_03_Terraform_pdf.pdf",
+    "topic_area": "Infrastructure as Code w/Terraform",
+    "related_concepts": ["c-terraform-002", "c-terraform-003", "c-iac-001"],
+    "keywords": ["Terraform", "HCL", "provider", "terraform init", ".tf", "HashiCorp"]
+  },
+  {
+    "id": "c-terraform-002",
+    "name": "Terraform 핵심 명령어와 워크플로우",
+    "definition": "terraform init(프로바이더 다운로드), terraform plan(변경사항 미리보기), terraform apply(인프라 생성/변경), terraform destroy(인프라 삭제). State 파일(.tfstate)로 현재 인프라 상태 추적",
+    "context": "Workflow: init → plan → apply. terraform init: downloads provider plugins. terraform plan: shows what will change without making changes. terraform apply: creates/modifies infrastructure. terraform destroy: removes all managed resources. State file tracks current infrastructure state.",
+    "source_file": "L05_03_Terraform_pdf.pdf",
+    "topic_area": "Infrastructure as Code w/Terraform",
+    "related_concepts": ["c-terraform-001", "c-terraform-003"],
+    "keywords": ["terraform init", "terraform plan", "terraform apply", "terraform destroy", "state", "tfstate"]
+  },
+  {
+    "id": "c-terraform-003",
+    "name": "Terraform 리소스, 변수, 출력",
+    "definition": "Resource: 관리할 인프라 객체(예: aws_instance, aws_security_group). Variable: 재사용 가능한 입력값. Output: 생성된 리소스의 정보를 출력. Data Source: 기존 리소스 정보를 읽어옴",
+    "context": "Resources define infrastructure objects (e.g., resource 'aws_instance' 'example'). Variables make configurations reusable (variable 'instance_type'). Outputs display information about created resources. Data sources read existing resource information. Modules organize and reuse Terraform configurations.",
+    "source_file": "L05_03_Terraform_pdf.pdf",
+    "topic_area": "Infrastructure as Code w/Terraform",
+    "related_concepts": ["c-terraform-001", "c-terraform-002"],
+    "keywords": ["resource", "variable", "output", "data source", "module", "aws_instance"]
+  },
+  {
+    "id": "c-iam-001",
+    "name": "IAM (Identity and Access Management) 개요",
+    "definition": "클라우드 리소스에 대한 접근을 제어하는 보안 체계. 인증(Authentication: 누구인가?)과 인가(Authorization: 무엇을 할 수 있는가?)를 관리. 기본적으로 모든 접근 거부(deny by default)",
+    "context": "IAM answers two questions: Authentication (Who are you?) and Authorization (What are you allowed to do?). Secure by default: users have no access until explicitly granted. Principle of Least Privilege: grant only minimum permissions necessary. Misconfigured access is one of the most common causes of cloud security breaches.",
+    "source_file": "L06_01_IAM_pdf.pdf",
+    "topic_area": "Identity & Access Management (IAM)",
+    "related_concepts": ["c-iam-002", "c-iam-003"],
+    "keywords": ["IAM", "authentication", "authorization", "least privilege", "deny by default", "인증", "인가"]
+  },
+  {
+    "id": "c-iam-002",
+    "name": "IAM 핵심 구성요소",
+    "definition": "Identities/Principals(접근 요청 엔티티: 사용자, 그룹, 서비스 계정), Policies/Permissions(어떤 리소스에 어떤 작업 허용), Roles(권한 모음), Groups(같은 권한을 공유하는 사용자 모음), Service Accounts(애플리케이션용 ID)",
+    "context": "Core IAM concepts: Identities (users, groups, service accounts, applications), Policies (rules defining allowed actions on resources), Roles (collections of permissions), Groups (collections of users sharing permissions), Service Accounts (machine identities for applications). Credential types: passwords, access keys, key pairs, X.509 certificates.",
+    "source_file": "L06_01_IAM_pdf.pdf",
+    "topic_area": "Identity & Access Management (IAM)",
+    "related_concepts": ["c-iam-001", "c-iam-003"],
+    "keywords": ["principal", "policy", "role", "group", "service account", "credentials"]
+  },
+  {
+    "id": "c-iam-003",
+    "name": "AWS, GCP, Azure IAM 비교",
+    "definition": "AWS IAM: Users, Groups, Roles, Policies(JSON). GCP IAM: Google Accounts, Service Accounts, Roles(Basic/Predefined/Custom), 리소스 계층 기반. Azure: Azure AD, Users, Groups, RBAC Roles, Management Groups",
+    "context": "AWS: IAM Users/Groups/Roles with JSON policies, resource-based and identity-based policies. GCP: Google Accounts, Service Accounts, IAM roles at organization/folder/project/resource level, policy inheritance. Azure: Azure Active Directory, RBAC roles, Management Groups for hierarchy. Each provider has different terminology but similar concepts.",
+    "source_file": "L06_01_IAM_pdf.pdf",
+    "topic_area": "Identity & Access Management (IAM)",
+    "related_concepts": ["c-iam-001", "c-iam-002"],
+    "keywords": ["AWS IAM", "GCP IAM", "Azure AD", "RBAC", "JSON policy", "클라우드 IAM"]
+  },
+  {
+    "id": "c-firewall-001",
+    "name": "네트워크 방화벽 (Network Firewall)",
+    "definition": "네트워크 트래픽을 모니터링하고 보안 규칙에 따라 허용 또는 차단하는 보안 시스템. AWS Security Groups(인스턴스 레벨, stateful), NACLs(서브넷 레벨, stateless)",
+    "context": "Firewalls filter traffic based on rules (source, destination, port, protocol). AWS: Security Groups are stateful (return traffic automatically allowed), NACLs are stateless (must explicitly allow return traffic). Security Groups operate at instance level, NACLs at subnet level. Default: Security Groups deny all inbound, allow all outbound.",
+    "source_file": "L06_01_IAM_pdf.pdf",
+    "topic_area": "Network Firewall",
+    "related_concepts": ["c-network-001", "c-iam-001"],
+    "keywords": ["firewall", "security group", "NACL", "stateful", "stateless", "inbound", "outbound", "방화벽"]
+  },
+  {
+    "id": "c-vm-001",
+    "name": "가상화 (Virtualization)",
+    "definition": "소프트웨어를 사용하여 하드웨어의 가상 버전을 생성하는 기술. 하이퍼바이저가 물리 하드웨어 위에서 여러 독립적인 VM을 실행. 물리 서버의 10-15% 활용률을 크게 향상",
+    "context": "Virtualization creates virtual versions of hardware using software. Traditional servers run at 10-15% capacity. Hypervisor runs on physical hardware and creates multiple isolated VMs. Type 1 (bare-metal): runs directly on hardware (VMware ESXi, KVM, Xen) - used by cloud providers. Type 2 (hosted): runs on top of OS (VirtualBox, VMware Workstation).",
+    "source_file": "L06_02_Virtualization_pdf.pdf",
+    "topic_area": "Virtual Machines",
+    "related_concepts": ["c-vm-002", "c-vm-003"],
+    "keywords": ["virtualization", "hypervisor", "Type 1", "Type 2", "bare-metal", "가상화"]
+  },
+  {
+    "id": "c-vm-002",
+    "name": "가상화 유형과 하이퍼바이저",
+    "definition": "Full Virtualization: 게스트 OS 수정 없이 완전한 하드웨어 에뮬레이션. Paravirtualization: 게스트 OS가 하이퍼바이저와 직접 통신하도록 수정. Hardware-Assisted: CPU가 가상화를 직접 지원(Intel VT-x, AMD-V)",
+    "context": "Full virtualization: complete hardware emulation, no guest OS modification needed. Paravirtualization: guest OS modified to communicate directly with hypervisor (better performance). Hardware-assisted: CPU provides virtualization support (Intel VT-x, AMD-V). Cloud providers use hardware-assisted virtualization with custom hypervisors (AWS Nitro, GCP custom KVM).",
+    "source_file": "L06_02_Virtualization_pdf.pdf",
+    "topic_area": "Virtual Machines",
+    "related_concepts": ["c-vm-001", "c-vm-003"],
+    "keywords": ["full virtualization", "paravirtualization", "hardware-assisted", "Intel VT-x", "AMD-V", "Nitro"]
+  },
+  {
+    "id": "c-vm-003",
+    "name": "EC2 Instance Store vs EBS",
+    "definition": "Instance Store: EC2 인스턴스에 물리적으로 연결된 임시 스토리지, 인스턴스 중지/종료 시 데이터 손실, 높은 I/O 성능. EBS: 네트워크로 연결된 영구 블록 스토리지, 인스턴스와 독립적으로 존재, 스냅샷 가능",
+    "context": "Instance Store: physically attached to host, data lost when instance stops/terminates/fails, high I/O performance, no network latency, included with certain instance types. EBS: persistent network-attached storage, data persists independently, can be backed up via snapshots, slightly higher latency. Use Instance Store for temporary data (batch processing, caching). Use EBS for persistent data.",
+    "source_file": "L06_02_Virtualization_pdf.pdf",
+    "topic_area": "Virtual Machines",
+    "related_concepts": ["c-vm-001", "c-vm-004"],
+    "keywords": ["Instance Store", "EBS", "ephemeral", "persistent", "storage", "스토리지", "EC2"]
+  },
+  {
+    "id": "c-vm-004",
+    "name": "VM 인스턴스 유형과 가격 모델",
+    "definition": "인스턴스 유형: 범용(General Purpose), 컴퓨팅 최적화, 메모리 최적화, 스토리지 최적화, 가속 컴퓨팅. 가격 모델: On-Demand(시간당 과금), Reserved(1-3년 약정 할인), Spot(여유 용량 할인, 중단 가능)",
+    "context": "Instance types optimized for different workloads. Pricing: On-Demand (pay per hour/second, no commitment), Reserved Instances (1-3 year commitment, significant discount), Spot Instances (spare capacity at discount, can be interrupted). Dedicated Hosts for compliance/licensing requirements.",
+    "source_file": "L06_02_Virtualization_pdf.pdf",
+    "topic_area": "Virtual Machines",
+    "related_concepts": ["c-vm-001", "c-vm-003"],
+    "keywords": ["instance type", "on-demand", "reserved", "spot", "dedicated", "pricing", "가격모델"]
+  },
+  {
+    "id": "c-vm-005",
+    "name": "Meltdown과 Spectre 취약점",
+    "definition": "CPU 하드웨어 레벨의 보안 취약점으로, 투기적 실행(speculative execution)을 악용하여 메모리 데이터를 읽을 수 있음. 멀티테넌트 클라우드 환경에서 특히 위험",
+    "context": "Meltdown and Spectre are hardware-level vulnerabilities exploiting speculative execution. Particularly dangerous in multi-tenant cloud environments where VMs share physical hardware. Mitigations include microcode updates, kernel patches, and dedicated hosts for sensitive workloads.",
+    "source_file": "L06_02_Virtualization_pdf.pdf",
+    "topic_area": "Virtual Machines",
+    "related_concepts": ["c-vm-001", "c-iam-001"],
+    "keywords": ["Meltdown", "Spectre", "speculative execution", "multi-tenant", "security", "취약점"]
+  },
+  {
+    "id": "c-image-001",
+    "name": "머신 이미지 (Machine Images)",
+    "definition": "VM을 생성하기 위한 사전 구성된 템플릿으로, OS, 설치된 소프트웨어, 설정, 데이터를 포함. AWS AMI, GCP Custom Image/Machine Image. 불변 인프라(immutable infrastructure)의 핵심",
+    "context": "Machine image captures complete configured system as reusable template. Solves 'snowflake server' problem (each server unique, hard to reproduce). Enables immutable infrastructure: instead of modifying servers, replace them with new instances from updated images. AMI lifecycle: create, register, copy, share, deprecate, disable, deregister.",
+    "source_file": "L06_03_Machine Images_pdf.pdf",
+    "topic_area": "Custom Machine Images",
+    "related_concepts": ["c-image-002", "c-image-003", "c-vm-001"],
+    "keywords": ["AMI", "machine image", "immutable infrastructure", "golden image", "template", "머신이미지"]
+  },
+  {
+    "id": "c-image-002",
+    "name": "Golden Image와 이미지 관리 모범 사례",
+    "definition": "Golden Image: 보안 강화, 규정 준수, 운영 일관성을 위해 표준화된 기본 이미지. 모범 사례: 버전 관리, 태깅, 보안 하드닝, 수명주기 정책, CI/CD 파이프라인에서 자동 빌드",
+    "context": "Golden image is a standardized base image with security hardening, compliance requirements, and operational consistency. Best practices: versioning, tagging, security hardening, lifecycle policies, automated building in CI/CD pipelines. AMI components: root volume (OS), launch permissions, block device mapping.",
+    "source_file": "L06_03_Machine Images_pdf.pdf",
+    "topic_area": "Custom Machine Images",
+    "related_concepts": ["c-image-001", "c-image-003"],
+    "keywords": ["golden image", "security hardening", "versioning", "tagging", "lifecycle"]
+  },
+  {
+    "id": "c-image-003",
+    "name": "Packer를 이용한 머신 이미지 자동 빌드",
+    "definition": "HashiCorp Packer는 여러 플랫폼에서 동일한 머신 이미지를 자동으로 생성하는 오픈소스 도구. 하나의 템플릿으로 AWS AMI, GCP Image, Azure Image 등을 동시에 빌드",
+    "context": "Packer automates machine image creation from single source configuration. Benefits: single source of truth, consistency across clouds, automation, version control, reproducibility. Packer template defines builders (target platforms), provisioners (configuration steps), and post-processors. Integrates with CI/CD pipelines for automated image building.",
+    "source_file": "L06_03_Machine Images_pdf.pdf",
+    "topic_area": "Building Custom Machine Images using Hashicorp Packer",
+    "related_concepts": ["c-image-001", "c-image-002", "c-iac-001"],
+    "keywords": ["Packer", "HashiCorp", "builder", "provisioner", "multi-cloud", "automation"]
+  },
+  {
+    "id": "c-cloudinit-001",
+    "name": "cloud-init",
+    "definition": "클라우드 인스턴스의 초기화를 자동화하는 업계 표준 도구. VM 첫 부팅 시 사용자 데이터(user data)를 실행하여 패키지 설치, 사용자 생성, SSH 키 설정, 서비스 시작 등을 수행",
+    "context": "cloud-init runs during first boot to initialize cloud instances. Solves the gap machine images cannot fill: instance-specific SSH keys, environment-specific configuration, secrets/credentials, dynamic service discovery. Boot stages: Generator, Local, Network, Config, Final.",
+    "source_file": "L06_04_Cloud Init_pdf.pdf",
+    "topic_area": "cloud-init",
+    "related_concepts": ["c-cloudinit-002", "c-cloudinit-003", "c-image-001"],
+    "keywords": ["cloud-init", "user data", "initialization", "first boot", "YAML", "초기화"]
+  },
+  {
+    "id": "c-cloudinit-002",
+    "name": "cloud-init 설정과 YAML 구문",
+    "definition": "cloud-init은 YAML 형식의 cloud-config로 설정. 주요 모듈: users(사용자 생성), packages(패키지 설치), write_files(파일 작성), runcmd(명령 실행), ssh_authorized_keys(SSH 키 설정)",
+    "context": "cloud-config YAML starts with #cloud-config. Key modules: users (create accounts, set SSH keys), packages (install software), write_files (create configuration files), runcmd (execute commands at boot), ssh_authorized_keys. Supports both AWS EC2 user data and GCP startup scripts.",
+    "source_file": "L06_04_Cloud Init_pdf.pdf",
+    "topic_area": "cloud-init",
+    "related_concepts": ["c-cloudinit-001", "c-cloudinit-003"],
+    "keywords": ["cloud-config", "YAML", "users", "packages", "runcmd", "write_files", "SSH"]
+  },
+  {
+    "id": "c-cloudinit-003",
+    "name": "Golden Image + cloud-init 패턴",
+    "definition": "머신 이미지에 공통 설정을 베이크(bake)하고, cloud-init으로 인스턴스별 동적 설정을 적용하는 패턴. 이미지에 넣을 것: OS, 공통 패키지, 보안 설정. cloud-init에 넣을 것: SSH 키, 환경별 설정, 시크릿",
+    "context": "Pattern: Bake common configuration into golden image (OS, packages, security), apply dynamic configuration via cloud-init at boot (SSH keys, environment config, secrets). Decision criteria: static/shared config → image, dynamic/instance-specific → cloud-init. This combines fast boot (pre-baked image) with flexibility (cloud-init customization).",
+    "source_file": "L06_04_Cloud Init_pdf.pdf",
+    "topic_area": "cloud-init",
+    "related_concepts": ["c-cloudinit-001", "c-image-001", "c-image-002"],
+    "keywords": ["golden image", "bake", "dynamic configuration", "boot time", "패턴"]
+  },
+  {
+    "id": "c-systemd-001",
+    "name": "systemd - 시스템 및 서비스 매니저",
+    "definition": "현대 리눅스의 init 시스템이자 서비스 매니저. 시스템 부팅, 서비스 수명주기(시작/중지/재시작), 의존성 관리, 로깅(journald)을 담당. PID 1로 실행되는 첫 번째 프로세스",
+    "context": "systemd is the init system and service manager for modern Linux. Runs as PID 1 (first process). Manages: system boot, service lifecycle (start/stop/restart), dependency ordering, logging (journald). Replaces older init systems (SysVinit, Upstart). Uses unit files to define services.",
+    "source_file": "L06_04_Cloud Init_pdf.pdf",
+    "topic_area": "systemd - System and Service Manager",
+    "related_concepts": ["c-systemd-002", "c-linux-001"],
+    "keywords": ["systemd", "init", "PID 1", "service manager", "journald", "서비스매니저"]
+  },
+  {
+    "id": "c-systemd-002",
+    "name": "systemd 서비스 유닛 파일과 명령어",
+    "definition": "서비스 유닛 파일(/etc/systemd/system/): [Unit](설명, 의존성), [Service](실행 명령, 재시작 정책), [Install](부팅 시 활성화). 주요 명령: systemctl start/stop/restart/enable/disable/status, journalctl(로그 확인)",
+    "context": "Unit file structure: [Unit] section (Description, After dependencies), [Service] section (Type, User, ExecStart, Restart policy, RestartSec), [Install] section (WantedBy for boot activation). Commands: systemctl daemon-reload (after file changes), systemctl enable (start on boot), systemctl start/stop/restart, systemctl status, journalctl -u service (view logs).",
+    "source_file": "L06_04_Cloud Init_pdf.pdf",
+    "topic_area": "systemd - System and Service Manager",
+    "related_concepts": ["c-systemd-001", "c-linux-003"],
+    "keywords": ["systemctl", "unit file", "ExecStart", "Restart", "enable", "journalctl"]
+  },
+  {
+    "id": "c-cloudproviders-001",
+    "name": "퍼블릭 클라우드 프로바이더 비교 (AWS, GCP, Azure)",
+    "definition": "AWS: 가장 큰 시장 점유율, EC2/S3/RDS 등 가장 넓은 서비스. GCP: 데이터 분석/ML 강점, Compute Engine/BigQuery. Azure: 엔터프라이즈/Microsoft 통합 강점, Virtual Machines/Azure SQL",
+    "context": "AWS: largest market share, broadest service offering (EC2, S3, RDS, Lambda). GCP: strong in data analytics and ML (BigQuery, TensorFlow), Kubernetes originated here. Azure: strong enterprise integration with Microsoft products (Active Directory, Office 365). Each has different pricing models, regions, and service naming conventions.",
+    "source_file": "L03_02_Regions, Availability Zones_pdf.pdf",
+    "topic_area": "Overview of Public Cloud Providers",
+    "related_concepts": ["c-cloud-001", "c-regions-001"],
+    "keywords": ["AWS", "GCP", "Azure", "EC2", "Compute Engine", "클라우드 프로바이더"]
+  },
+  {
+    "id": "c-terraform-network-001",
+    "name": "Terraform으로 클라우드 네트워킹 구성",
+    "definition": "Terraform을 사용하여 AWS VPC, 서브넷, 라우트 테이블, 인터넷 게이트웨이, 보안 그룹 등 네트워크 인프라를 코드로 정의하고 관리. GCP와 Azure에서도 유사한 네트워크 리소스 관리 가능",
+    "context": "Using Terraform to define network infrastructure as code: VPC (aws_vpc), Subnets (aws_subnet), Route Tables (aws_route_table), Internet Gateway (aws_internet_gateway), Security Groups (aws_security_group). Same approach for GCP (google_compute_network, google_compute_firewall) and Azure (azurerm_virtual_network, azurerm_network_security_group).",
+    "source_file": "L05_03_Terraform_pdf.pdf",
+    "topic_area": "AWS, GCP & Azure Networking with Terraform",
+    "related_concepts": ["c-terraform-001", "c-network-006", "c-firewall-001"],
+    "keywords": ["Terraform networking", "VPC", "subnet", "security group", "aws_vpc", "네트워크 IaC"]
+  }
+]
