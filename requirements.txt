@@ -1,0 +1,6 @@
+pdfplumber
+anthropic
+hypothesis
+pytest
+rich
+python-dotenv
