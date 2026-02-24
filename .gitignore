@@ -51,8 +51,6 @@ htmlcov/
 .hypothesis/
 
 # Data files (generated)
-data/*.json
-data/extracted_text/
 
 # Lecture materials (user-provided)
 classmaterials/*.pdf

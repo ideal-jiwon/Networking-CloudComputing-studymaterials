@@ -1,5 +1,6 @@
 """Coverage tracking module for monitoring concept testing progress."""
 
+import random
 from typing import List, Dict, Optional
 from datetime import datetime
 
@@ -146,7 +147,7 @@ class CoverageTracker:
             tested_ids = set(self.concept_coverage.keys())
             untested = [c for c in pool if c.id not in tested_ids]
             if untested:
-                return untested[0]
+                return random.choice(untested)
 
             # All covered — fall back to least-recently-tested within pool
             return self._least_recently_tested(pool)

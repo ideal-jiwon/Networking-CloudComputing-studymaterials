@@ -47,6 +47,7 @@ class StudyInterface:
         self.question_number: int = 0
         self._session_active: bool = False
         self.topic_filter: Optional[str] = None
+        self._asked_question_ids: set = set()
 
     def start_session(self) -> None:
         """Initialize a study session by loading data and restoring progress."""
@@ -91,6 +92,7 @@ class StudyInterface:
 
     def get_next_question(self) -> Optional[Question]:
         """Retrieve the next question prioritizing untested concepts.
+        Skips questions that have already been asked in this session.
 
         Respects the current topic_filter if set.
 
@@ -106,20 +108,28 @@ class StudyInterface:
         if concept is None:
             return None
 
-        # Find a question that covers this concept
+        # Find a question that covers this concept and hasn't been asked yet
         for q in self.questions:
-            if concept.id in q.concept_ids:
+            if q.id not in self._asked_question_ids and concept.id in q.concept_ids:
                 if self.topic_filter is None or q.topic_area == self.topic_filter:
+                    self._asked_question_ids.add(q.id)
                     return q
 
-        # Fallback: return first question matching topic filter
+        # Fallback: return first unseen question matching topic filter
         if self.topic_filter:
             for q in self.questions:
-                if q.topic_area == self.topic_filter:
+                if q.id not in self._asked_question_ids and q.topic_area == self.topic_filter:
+                    self._asked_question_ids.add(q.id)
                     return q
             return None
 
-        return self.questions[0] if self.questions else None
+        # Fallback: any unseen question
+        for q in self.questions:
+            if q.id not in self._asked_question_ids:
+                self._asked_question_ids.add(q.id)
+                return q
+
+        return None
 
 
     def display_question(self, question: Question) -> None:

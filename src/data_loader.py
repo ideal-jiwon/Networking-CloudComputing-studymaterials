@@ -251,8 +251,8 @@ class DataLoader:
                     warnings.append(warning)
                     logger.warning(warning)
 
-        # 2. Validate required fields in questions
-        question_required = ['id', 'scenario', 'question_text', 'model_answer', 'difficulty', 'topic_area']
+        # 2. Validate required fields in questions (scenario is optional for concept-only questions)
+        question_required = ['id', 'question_text', 'model_answer', 'difficulty', 'topic_area']
         for question in questions:
             for field_name in question_required:
                 value = getattr(question, field_name, None)

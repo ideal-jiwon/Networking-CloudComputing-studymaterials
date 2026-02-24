@@ -1,0 +1,61 @@
+{
+  "session_id": "current",
+  "start_time": "2026-02-23T17:42:44.605563",
+  "concept_coverage": {
+    "c-cloud-001": [
+      "q031"
+    ]
+  },
+  "answered_questions": [],
+  "total_questions_answered": 1,
+  "coverage_stats": {
+    "total_concepts": 61,
+    "tested_concepts": 1,
+    "coverage_percentage": 1.639344262295082,
+    "coverage_by_topic": {
+      "Fundamentals of Cloud Computing": 25.0,
+      "The Software Development Life Cycle (SDLC)": 0.0,
+      "The Twelve-Factor App": 0.0,
+      "Introduction to DevOps": 0.0,
+      "The Linux Command Line": 0.0,
+      "Cloud Regions & Availability Zones": 0.0,
+      "Unit, Integration, Performance, and Load Testing": 0.0,
+      "Continuous Integration with GitHub Actions": 0.0,
+      "Version Control with Git": 0.0,
+      "Git Forking Workflow": 0.0,
+      "Networking Fundamentals": 0.0,
+      "Infrastructure as Code w/Terraform": 0.0,
+      "Identity & Access Management (IAM)": 0.0,
+      "Network Firewall": 0.0,
+      "Virtual Machines": 0.0,
+      "Custom Machine Images": 0.0,
+      "Building Custom Machine Images using Hashicorp Packer": 0.0,
+      "cloud-init": 0.0,
+      "systemd - System and Service Manager": 0.0,
+      "Overview of Public Cloud Providers": 0.0,
+      "AWS, GCP & Azure Networking with Terraform": 0.0
+    },
+    "untested_topics": [
+      "AWS, GCP & Azure Networking with Terraform",
+      "Building Custom Machine Images using Hashicorp Packer",
+      "Cloud Regions & Availability Zones",
+      "Continuous Integration with GitHub Actions",
+      "Custom Machine Images",
+      "Git Forking Workflow",
+      "Identity & Access Management (IAM)",
+      "Infrastructure as Code w/Terraform",
+      "Introduction to DevOps",
+      "Network Firewall",
+      "Networking Fundamentals",
+      "Overview of Public Cloud Providers",
+      "The Linux Command Line",
+      "The Software Development Life Cycle (SDLC)",
+      "The Twelve-Factor App",
+      "Unit, Integration, Performance, and Load Testing",
+      "Version Control with Git",
+      "Virtual Machines",
+      "cloud-init",
+      "systemd - System and Service Manager"
+    ]
+  }
+}

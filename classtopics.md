@@ -4,8 +4,6 @@ The Twelve-Factor App
 The Software Development Life Cycle (SDLC) 
 The Linux Command Line
 Overview of Public Cloud Providers
-Amazon Web Services (AWSLinks to an external site.)
-Google Cloud Platform (GCPLinks to an external site.)
 Cloud Regions & Availability Zones
 Version Control with Git
 Git Forking Workflow
@@ -21,3 +19,4 @@ Custom Machine Images
 Building Custom Machine Images using Hashicorp Packer
 cloud-init
 systemd - System and Service Manager
+Cloud Storage Solutions

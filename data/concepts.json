@@ -608,5 +608,82 @@
     "topic_area": "AWS, GCP & Azure Networking with Terraform",
     "related_concepts": ["c-terraform-001", "c-network-006", "c-firewall-001"],
     "keywords": ["Terraform networking", "VPC", "subnet", "security group", "aws_vpc", "네트워크 IaC"]
+  },
+  {
+    "id": "c-storage-001",
+    "name": "블록 스토리지 (Block Storage)",
+    "definition": "블록 스토리지는 고정 크기 바이트 시퀀스(블록)로 데이터를 저장. 두 가지 유형: 네트워크 연결 블록 스토리지(EBS, Persistent Disk)는 VM과 독립적이고 영구적, 인스턴스 스토어는 물리적으로 연결되어 빠르지만 임시적(인스턴스 중지/종료 시 데이터 손실)",
+    "context": "Block storage stores data as fixed-size blocks. Two types: Network-attached (EBS/Persistent Disk/Managed Disks) - independent of VM, replicated, snapshots, encryption, resizable. Instance Store - physically attached, ephemeral, no network overhead but data lost on stop/terminate/failure.",
+    "source_file": "L07_01_Cloud Storage Solutions.pdf",
+    "topic_area": "Cloud Storage Solutions",
+    "related_concepts": ["c-vm-003", "c-storage-002"],
+    "keywords": ["block storage", "EBS", "instance store", "ephemeral", "snapshot", "블록스토리지"],
+    "extraction_timestamp": "2025-02-24T00:00:00"
+  },
+  {
+    "id": "c-storage-002",
+    "name": "오브젝트 스토리지 (Object Storage - S3)",
+    "definition": "오브젝트 스토리지는 데이터를 Key, Metadata, Data로 구성된 객체로 저장. 플랫 네임스페이스(디렉토리 없음), HTTP API로 접근. 버킷에 저장되며 글로벌 고유 이름 필요. 스토리지 클래스, 수명주기 정책, 버전 관리, 암호화, 교차 리전 복제 지원",
+    "context": "Object storage stores data as objects with Key, Metadata, Data. Flat namespace, accessed via HTTP APIs. Objects live in buckets (globally unique names). Features: storage classes (Standard, Infrequent Access, Archive), lifecycle policies, versioning, encryption, cross-region replication. NOT a file system, NOT a database.",
+    "source_file": "L07_01_Cloud Storage Solutions.pdf",
+    "topic_area": "Cloud Storage Solutions",
+    "related_concepts": ["c-storage-001", "c-storage-003"],
+    "keywords": ["object storage", "S3", "bucket", "lifecycle", "versioning", "오브젝트스토리지"],
+    "extraction_timestamp": "2025-02-24T00:00:00"
+  },
+  {
+    "id": "c-storage-003",
+    "name": "파일 스토리지 (File Storage - EFS)",
+    "definition": "파일 스토리지는 여러 VM이 동시에 마운트할 수 있는 공유 파일 시스템. NFS 프로토콜 사용. AWS EFS는 자동 확장, 다중 AZ 저장, Linux 전용. 사용 사례: 빅데이터 분석, 미디어 처리, 콘텐츠 관리",
+    "context": "File storage provides shared file systems mountable by multiple VMs simultaneously. Uses NFS protocol. AWS EFS: auto-scales, stores across multiple AZs, Linux only (FSx for Windows). Use cases: big data analytics, media processing, content management, web serving.",
+    "source_file": "L07_01_Cloud Storage Solutions.pdf",
+    "topic_area": "Cloud Storage Solutions",
+    "related_concepts": ["c-storage-001", "c-storage-002"],
+    "keywords": ["file storage", "EFS", "NFS", "shared filesystem", "파일스토리지"],
+    "extraction_timestamp": "2025-02-24T00:00:00"
+  },
+  {
+    "id": "c-storage-004",
+    "name": "관계형 데이터베이스와 ACID",
+    "definition": "관계형 DB는 테이블, 행, 열, SQL로 데이터를 구조화. ACID 트랜잭션: Atomicity(원자성-전부 또는 전무), Consistency(일관성), Isolation(격리성), Durability(영속성). 관리형 서비스: AWS RDS, GCP Cloud SQL, Azure SQL. Multi-AZ 배포로 고가용성",
+    "context": "Relational databases organize data in tables with rows and columns, queried via SQL. ACID transactions ensure reliability. Managed services (RDS, Cloud SQL, Azure SQL) handle patching, backups, replication. Multi-AZ deployments provide automatic failover. Backups: automated (daily snapshot + transaction logs) and manual snapshots.",
+    "source_file": "L07_01_Cloud Storage Solutions.pdf",
+    "topic_area": "Cloud Storage Solutions",
+    "related_concepts": ["c-storage-005", "c-storage-001"],
+    "keywords": ["relational database", "ACID", "SQL", "RDS", "Multi-AZ", "관계형DB"],
+    "extraction_timestamp": "2025-02-24T00:00:00"
+  },
+  {
+    "id": "c-storage-005",
+    "name": "NoSQL 데이터베이스와 CAP 정리",
+    "definition": "NoSQL은 스키마 없음, 비관계형, 클러스터 친화적, 조인 없음, 최종 일관성. 유형: Key-Value(DynamoDB), Document(Firestore), Column-Family(Bigtable), Graph(Neptune). CAP 정리: Consistency, Availability, Partition Tolerance 중 네트워크 파티션 시 C와 A 중 선택",
+    "context": "NoSQL: schema-free, non-relational, cluster-friendly, no joins, eventual consistency. Types: Key-Value (DynamoDB, Redis), Document (Firestore, MongoDB), Column-Family (Bigtable, Cassandra), Graph (Neptune, Neo4j). CAP theorem: during network partition, choose between Consistency and Availability. RDBMS favors C, many NoSQL favor A.",
+    "source_file": "L07_01_Cloud Storage Solutions.pdf",
+    "topic_area": "Cloud Storage Solutions",
+    "related_concepts": ["c-storage-004", "c-storage-006"],
+    "keywords": ["NoSQL", "CAP theorem", "DynamoDB", "eventual consistency", "key-value", "document DB"],
+    "extraction_timestamp": "2025-02-24T00:00:00"
+  },
+  {
+    "id": "c-storage-006",
+    "name": "스토리지 선택과 폴리글랏 퍼시스턴스",
+    "definition": "스토리지 선택 기준: OS 파일 시스템 필요→블록, 공유 파일 접근→파일, 비정형 데이터→오브젝트, ACID/SQL 필요→관계형DB, 유연한 스키마/수평 확장→NoSQL. 폴리글랏 퍼시스턴스: 하나의 애플리케이션에서 여러 스토리지 유형을 함께 사용하는 클라우드 네이티브 접근",
+    "context": "Storage decision tree: Need OS file system access → Block. Multiple VMs shared access → File. Unstructured data → Object. ACID + SQL → Relational DB. Flexible schema + horizontal scale → NoSQL. Polyglot persistence: using multiple storage types in one application — the cloud-native way.",
+    "source_file": "L07_01_Cloud Storage Solutions.pdf",
+    "topic_area": "Cloud Storage Solutions",
+    "related_concepts": ["c-storage-001", "c-storage-002", "c-storage-003", "c-storage-004", "c-storage-005"],
+    "keywords": ["polyglot persistence", "storage selection", "decision tree", "스토리지선택"],
+    "extraction_timestamp": "2025-02-24T00:00:00"
+  },
+  {
+    "id": "c-storage-007",
+    "name": "데이터베이스 분산 모델",
+    "definition": "Single Server: 단일 서버, 간단하지만 제한적. Sharding: 키 기반으로 데이터를 여러 노드에 분할, 읽기/쓰기 성능 향상. Primary-Secondary Replication: 하나의 프라이머리가 쓰기 처리, 세컨더리가 읽기 분산. Peer-to-Peer: 모든 노드가 쓰기 가능, 단일 장애점 없음",
+    "context": "Distribution models: Single Server (simple, limited). Sharding (split data by key across nodes, improves read AND write, wrong shard key causes hot spots). Primary-Secondary Replication (one primary for writes, secondaries for reads, primary is bottleneck). Peer-to-Peer (all nodes accept writes, no SPOF, needs conflict resolution). Combined: Sharding + Replication common in production.",
+    "source_file": "L07_01_Cloud Storage Solutions.pdf",
+    "topic_area": "Cloud Storage Solutions",
+    "related_concepts": ["c-storage-005", "c-storage-004"],
+    "keywords": ["sharding", "replication", "peer-to-peer", "distribution", "분산모델"],
+    "extraction_timestamp": "2025-02-24T00:00:00"
   }
 ]
